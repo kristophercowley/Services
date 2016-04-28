@@ -1,0 +1,48 @@
+<html ng-app="My-Module">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Service To Do</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="">
+</head>
+
+<body class="container-fluid" ng-controller="MyController as mc">
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-group">
+            <input type="text" ng-model="mc.new.name">
+            <input type="text" ng-model="mc.new.age">
+            <input type="text" ng-model="mc.new.what">
+            <button ng-click="mc.addNew(mc.new)" class="btn btn-primary">Add</button>
+            <button class="btn btn-danger" ng-click="remove()">Remove</button>
+            </form>
+        </div>
+    </div>
+    <h1>Services Service</h1> {{2 + 2}} {{mc.test}}
+    <h2>Service Data</h2>
+    <div class="panel row">
+        <div class="panel-default col-md-4" ng-repeat="data in mc.data track by $index">
+            <ul class="list-group">
+                <li class="list-group-item">{{data.name}}{{data.age}}</li>
+            </ul>
+        </div>
+    </div>
+    <h2>Factory Data</h2>
+
+    <div class="panel row">
+        <div class="panel-default col-md-4" ng-repeat="data in mc.filteredFact track by $index">
+            <ul class="list-group">
+                <li class="list-group-item">{{data.name}}{{data.age}}</li>
+            </ul>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="controllers.js"></script>
+    <script src=""></script>
+
+</body>
+
+</html>
