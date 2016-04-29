@@ -79,6 +79,9 @@ angular.module('My-Module')
         
     ]
     
+    var moreData = [
+        1,2,3,4,5,6,7,8,9,0,9,8,7,6,5,4,3,23,1,2,1,3,1,3,45,67,87,,4,22
+    ]
         function getData (){
             return data;
         }
@@ -86,10 +89,14 @@ angular.module('My-Module')
         function setData (newData){
             data.push(newData)
         }
-        
+        function getMoreData(){
+            return moreData
+        }
+       
         return {
             getData: getData,
-            setData: setData
+            setData: setData,
+            getMoreData: getMoreData
         }
         
 }])

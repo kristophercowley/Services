@@ -8,14 +8,31 @@
 </head>
 
 <body class="container-fluid" ng-controller="MyController as mc">
+
+    <div class="panel" ng-controller="CLController as cl">
+        <div class="panel-warning panel-heading row">
+            <h2>CL Controller stuffs</h2>
+            <div class="panel-body col-sm-12">
+                <span>{{cl.test}}</span>
+                <label>CMD Line </label>
+                <input ng-model="cl.command" ng-keyUp="cl.traverseCommands($event)" />
+                <button ng-click="cl.saveToHistory(cl.command)">GO</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <h2>my-controller stuffs</h2>
     <div class="row">
         <div class="col-sm-12">
             <form class="form-group">
-            <input type="text" ng-model="mc.new.name">
-            <input type="text" ng-model="mc.new.age">
-            <input type="text" ng-model="mc.new.what">
-            <button ng-click="mc.addNew(mc.new)" class="btn btn-primary">Add</button>
-            <button class="btn btn-danger" ng-click="remove()">Remove</button>
+                <input type="text" ng-model="mc.new.name">
+                <input type="text" ng-model="mc.new.age">
+                <input type="text" ng-model="mc.new.what">
+                <button ng-click="mc.addNew(mc.new)" class="btn btn-primary">Add</button>
+                <button class="btn btn-danger" ng-click="remove()">Remove</button>
             </form>
         </div>
     </div>
